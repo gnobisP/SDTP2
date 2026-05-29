@@ -15,6 +15,7 @@ class PeerServer:
 
     def start(self):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         server_socket.bind((self.host, self.port))
         server_socket.listen()
 
@@ -44,7 +45,8 @@ class PeerServer:
             if message_type == "HAVE":
                 response = {
                     "type": "HAVE_RESPONSE",
-                    "chunks": self.chunks_owned
+                    "total_chunks": len(
+                        self.chunks_owned)
                 }
 
                 client_socket.send(encode_message(response))

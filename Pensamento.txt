@@ -489,7 +489,7 @@ shared/teste.txt
 Terminal 1:
 
 ```bash
-python peer.py --port 5000 --file shared/teste.txt --seed
+python3 peer.py --port 5020 --file shared/teste.txt --seed
 ```
 
 ---
@@ -499,7 +499,7 @@ python peer.py --port 5000 --file shared/teste.txt --seed
 Terminal 2:
 
 ```bash
-python peer.py --port 5001 --neighbors 127.0.0.1:5000 --file shared/teste.txt
+python3 peer.py --port 5021 --neighbors 127.0.0.1:5020 --file shared/teste.txt
 ```
 
 ---
@@ -509,7 +509,7 @@ python peer.py --port 5001 --neighbors 127.0.0.1:5000 --file shared/teste.txt
 Terminal 3:
 
 ```bash
-python peer.py --port 5002 --neighbors 127.0.0.1:5000,127.0.0.1:5001 --file shared/teste.txt
+python3 peer.py --port 5022 --neighbors 127.0.0.1:5020,127.0.0.1:5021 --file shared/teste.txt
 ```
 
 ---

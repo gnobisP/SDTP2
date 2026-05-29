@@ -89,6 +89,8 @@ if not args.seed:
     client.start_download()
 
     assemble_file(filename)
+    print("Download finalizado.")
+    exit(0)
 
 
 while True:
